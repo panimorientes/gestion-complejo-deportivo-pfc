@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+<h:head>
+	<title>santiagotapiay - Integración JSF Hibernate</title>
+</h:head>
+<h:body>
+	
+	<h:form>
+		<h3>Por favor, introduzca su nombre y password.</h3>
+		<table>
+			<tr>
+				<td>Nombre:</td>
+				<td><h:inputText value="#{personaBean.nombre}" maxlength="5"/></td>
+			</tr>
+			<tr>
+				<td>Apellidos</td>
+				<td><h:inputSecret value="#{personaBean.apellidos}" /></td>
+			</tr>
+		</table>
+		
+		<p:graphicImage value="/images/duke.jpg"></p:graphicImage>
+		
+		<p>
+			<h:commandButton value="Aceptar" action="login" />
+		</p>
+		<p>
+			<h:commandButton value="Salir" action="signup" />
+		</p>
+<!-- <h:commandButton action="#{personaBean.save()}" value="Guardar" />  -->
+
+
+	</h:form>
+	
+	
+</h:body>
+</html>
