@@ -1,4 +1,4 @@
-package neg;
+package domain;
 
 public class Persona {
 	private int intId;
@@ -7,7 +7,8 @@ public class Persona {
 	private int intEdad;
 	private int intIdEmpresa;
 	private String strEstado;
-	private Empresa objEmpresa;
+	
+	
 	public int getIntId() {
 		return intId;
 	}
@@ -32,23 +33,19 @@ public class Persona {
 	public void setIntEdad(int intEdad) {
 		this.intEdad = intEdad;
 	}
-	public String getStrEstado() {
-		return strEstado;
-	}
-	public void setStrEstado(String strEstado) {
-		this.strEstado = strEstado;
-	}
 	public int getIntIdEmpresa() {
 		return intIdEmpresa;
 	}
 	public void setIntIdEmpresa(int intIdEmpresa) {
 		this.intIdEmpresa = intIdEmpresa;
 	}
-	public Empresa getObjEmpresa() {
-		return objEmpresa;
+	public String getStrEstado() {
+		return strEstado;
 	}
-	public void setObjEmpresa(Empresa objEmpresa) {
-		this.objEmpresa = objEmpresa;
+	public void setStrEstado(String strEstado) {
+		this.strEstado = strEstado;
 	}
+
+		
 
 }

@@ -28,11 +28,9 @@
         <property name="format_sql">true</property>
         
         <!-- Elimina y vuelve a crear la base de datos -->
-
-        <property name="hbm2ddl.auto">create</property>
+        <!--  <property name="hbm2ddl.auto">create</property>  -->
 
         <mapping resource="data/Persona.hbm.xml" />
-        <mapping resource="data/Empresa.hbm.xml" />
         
     </session-factory>
 
