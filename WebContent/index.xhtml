@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>JSF Hibernate</title>
+</h:head>
+
+<h:body>
+
+<h:form>
+		<h3>Por favor, introduzca sus datos:</h3>
+		<table>
+			<tr>
+				<td>Nombre:</td>
+				<td><h:inputText value="#{personaBean.strNombres}" maxlength="22"/></td>
+			</tr>
+			<tr>
+				<td>Apellidos</td>
+				<td><h:inputText value="#{personaBean.strApellidos}" /></td>
+			</tr>
+			<tr>
+				<td>Edad</td>
+				<td><p:spinner  value="#{personaBean.intEdad}"  min="-7" max="22" /></td>
+			</tr>
+		</table>
+		
+		<p>
+			<h:commandButton value="Aceptar" action="login" />
+		</p>
+		<p>
+			<h:commandButton value="Salir" action="signup" />
+		</p>
+		<p>
+			<h:commandButton value="Guardar" action="#{personaBean.save}" />
+		</p>
+
+	</h:form>
+	
+	<br />
+	<br />
+	
+</h:body>
+</html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+    version="2.0">
+
+<!-- MANAGED BEANS -->
+	<!--  Se puede hacer asi o con anotaciones en la clase UsuarioBean -->
+	<!-- 
+	<managed-bean>
+		<managed-bean-name>personaBean</managed-bean-name>
+		<managed-bean-class>presentation.PersonaBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	 -->
+	
+	
+<!-- REGLAS DE NAVEGACION -->
+	<navigation-rule>
+		<from-view-id>/index.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/hola.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>signup</from-outcome>
+			<to-view-id>/adios.xhtml</to-view-id>
+		</navigation-case>
+		<!-- 
+		<navigation-case>
+			<from-outcome>#{personaBean.save}</from-outcome>
+			<to-view-id>/exito.xhtml</to-view-id>
+		</navigation-case>
+		 
+		 <navigation-case>
+			<from-action>#{personaBean.save}</from-action>
+			<from-outcome>realizar_accion</from-outcome>
+			<to-view-id>/exito.xhtml</to-view-id>
+		</navigation-case>
+		-->
+	</navigation-rule>
+
+</faces-config>
