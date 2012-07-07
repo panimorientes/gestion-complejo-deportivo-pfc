@@ -59,6 +59,13 @@ public class PersonaBean {
 	}
 	
 	
+	/**
+	 * Guarda un objeto PersonaBean en la Base de Datos
+	 * 
+	 * @param (no tiene parametros)
+	 * @return (no devuelve nada)
+	 * @throws (no eleva ninguna excepcion de momento)
+	 */
 	public void save(){	
 		BasicConfigurator.configure();
         Logger.getRootLogger().setLevel(Level.WARN);
@@ -75,7 +82,6 @@ public class PersonaBean {
     	session.beginTransaction();
         session.save(p1);
         session.getTransaction().commit();
-		
 		
         HibernateUtil.getSessionFactory().close();
 	}
