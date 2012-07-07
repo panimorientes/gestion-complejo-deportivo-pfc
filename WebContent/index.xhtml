@@ -9,8 +9,10 @@
 
 <h:body>
 
+	<f:loadBundle basename="utils/mensajes" var="msjs"></f:loadBundle> 
+
 <h:form>
-		<h3>Hola me llamo antonio blazquez y aparte de un chupoptero, soy un autentico inutil :)</h3>
+		<h3><h:outputText value="#{msjs.saludo}"/></h3>
 		<br />
 		<br />
 		<h3>Por favor, introduzca sus datos:</h3>
