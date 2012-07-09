@@ -3,13 +3,11 @@ package presentation;
 import java.util.Date;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 
 import data.dao.impl.PersonaDAOImpl;
 import domain.Persona;
 
 @ManagedBean(name="personaBean")
-@SessionScoped
 public class PersonaBean {
 	private int intId;
 	private String strNombres;
