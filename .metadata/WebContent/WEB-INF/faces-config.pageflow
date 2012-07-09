@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13415982647870" configfile="/Jsf_Hibernate/WebContent/WEB-INF/faces-config.xml">
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13415982647870" configfile="/CD_Panzer/WebContent/WEB-INF/faces-config.xml">
   <nodes xsi:type="pageflow:PFPage" name="index.xhtml" id="pf13415982812091" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf13415982812092 pf13415982812093" path="/index.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="hola.xhtml" id="pf13415982812104" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf13415982812092" path="/hola.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="adios.xhtml" id="pf13415982812105" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf13415982812093" path="/adios.xhtml"/>
-  <links id="pf13415982812092" target="pf13415982812104" source="pf13415982812091" outcome="login"/>
-  <links id="pf13415982812093" target="pf13415982812105" source="pf13415982812091" outcome="signup"/>
+  <links id="pf13415982812092" target="pf13415982812104" source="pf13415982812091"/>
+  <links id="pf13415982812093" target="pf13415982812105" source="pf13415982812091"/>
 </pageflow:Pageflow>

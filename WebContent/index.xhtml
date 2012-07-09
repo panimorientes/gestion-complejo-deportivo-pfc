@@ -29,8 +29,13 @@
 				<td>Edad</td>
 				<td><p:spinner  value="#{personaBean.intEdad}"  min="-7" max="22" /></td>
 			</tr>
+			<tr>
+				<td>Fecha</td>
+				<h:outputText value="Explode" />  
+				<td><p:calendar value="#{personaBean.fecha}"  effect="explode" locale="es" /> </td>
+			</tr>
 		</table>
-		
+
 		<p>
 			<h:commandButton value="Aceptar" action="login" />
 		</p>

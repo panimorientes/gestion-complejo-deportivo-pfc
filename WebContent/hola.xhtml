@@ -1,6 +1,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.prime.com.tr/ui">
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+    xmlns:f="http://java.sun.com/jsf/core">
+    
 <head>
 <title>JSF Hibernate</title>
 </head>
@@ -9,6 +11,10 @@
 		<h3>
 			Bienvenido 
 			<h:outputText value="#{personaBean.strNombres}" />
+			<br />
+			<h:outputText value="#{personaBean.fecha}">  
+                <f:convertDateTime pattern="dd/MM/yyyy"/>  
+            </h:outputText>
 		</h3>
 			
 		
