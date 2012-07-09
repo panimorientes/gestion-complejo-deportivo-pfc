@@ -1,16 +1,15 @@
 package presentation;
 
+import java.util.Date;
+
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.hibernate.Session;
-
-import data.HibernateUtil;
+import data.dao.impl.PersonaDAOImpl;
 import domain.Persona;
 
 @ManagedBean(name="personaBean")
+@SessionScoped
 public class PersonaBean {
 	private int intId;
 	private String strNombres;
@@ -18,6 +17,7 @@ public class PersonaBean {
 	private int intEdad;
 	private int intIdEmpresa;
 	private String strEstado;
+	private Date fecha;
 	
 	
 	
@@ -57,6 +57,12 @@ public class PersonaBean {
 	public void setStrEstado(String strEstado) {
 		this.strEstado = strEstado;
 	}
+	public Date getFecha() {
+		return fecha;
+	}
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
 	
 	
 	/**
@@ -67,9 +73,6 @@ public class PersonaBean {
 	 * @throws (no eleva ninguna excepcion de momento)
 	 */
 	public void save(){	
-		BasicConfigurator.configure();
-        Logger.getRootLogger().setLevel(Level.WARN);
-		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		
 		//CREO UN OBJETO PERSONA Y LO INSERTO EN LA BD
     	Persona p1=new Persona();
@@ -78,12 +81,11 @@ public class PersonaBean {
     	p1.setIntEdad(this.intEdad);;
     	p1.setIntIdEmpresa(1);
     	p1.setStrEstado("1");
-        
-    	session.beginTransaction();
-        session.save(p1);
-        session.getTransaction().commit();
-		
-        HibernateUtil.getSessionFactory().close();
+    	
+    	PersonaDAOImpl personaDAOImpl = new PersonaDAOImpl();
+    	personaDAOImpl.saveObject(p1);
+
 	}
+
 
 }

@@ -30,7 +30,9 @@
         <!-- Elimina y vuelve a crear la base de datos -->
         <!--  <property name="hbm2ddl.auto">create</property>  -->
 
-        <mapping resource="data/Persona.hbm.xml" />
+
+		<!-- Tablas mapeadas con hibernate -->
+        <mapping resource="data/hbm/Persona.hbm.xml" />
         
     </session-factory>
 
