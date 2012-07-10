@@ -2,9 +2,15 @@ package data.dao.impl;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 
+import data.HibernateUtil;
 import data.dao.interfaces.PersonaDAO;
+import data.hibernate.PersonaHB;
+import domain.impl.PersonaImpl;
 import domain.interfaces.Persona;
 
 public class PersonaDAOImpl extends DAOImpl implements PersonaDAO{
@@ -44,6 +50,21 @@ public class PersonaDAOImpl extends DAOImpl implements PersonaDAO{
 		}
 	}
 	
+	
+	
+	public Persona obtener(int id)/* throws DataBaseException*/{
+		Persona res = null;
+		
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		Criteria crit = session.createCriteria(PersonaImpl.class);
+		//crit.add(Restrictions.eq("ID", id));  ES LO MISMO, PERO SIN HB
+		crit.add(Restrictions.eq(PersonaHB.ID, id));
+		res = (Persona) crit.uniqueResult();
+
+		return res;
+		
+	}
 	
 	
 }
