@@ -110,4 +110,12 @@ public class PersonaBean {
 	}
 
 
+	public void obtain(){
+		PersonaDAOImpl personaDAOImpl = new PersonaDAOImpl();
+    	Persona p = personaDAOImpl.obtener(this.intId);
+    	this.strNombres = p.getStrNombres();
+    	this.strApellidos = p.getStrApellidos();
+    	this.intEdad = p.getIntEdad();
+	}
+	
 }

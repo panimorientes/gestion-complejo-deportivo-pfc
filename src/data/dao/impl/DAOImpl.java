@@ -4,15 +4,11 @@ import java.io.Serializable;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.hibernate.criterion.Restrictions;
 
 import data.HibernateUtil;
 import data.dao.interfaces.DAO;
-import data.hibernate.PersonaHB;
-import domain.impl.PersonaImpl;
 
 public class DAOImpl implements DAO{
 	
@@ -124,18 +120,6 @@ public class DAOImpl implements DAO{
 //	}
 	
 	
-	public PersonaHB obtain(int id)/* throws DataBaseException*/{
-		PersonaHB res = null;
-		
-		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-		Criteria crit = session.createCriteria(PersonaImpl.class);
-		//crit.add(Restrictions.eq("ID", id));  ES LO MISMO, PERO SIN HB
-		crit.add(Restrictions.eq(PersonaHB.ID, id));
-		
-		res = (PersonaHB) crit.uniqueResult();
-
-		return res;
-	}
 
 	
 }
