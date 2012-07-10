@@ -31,8 +31,11 @@
 			</tr>
 			<tr>
 				<td>Fecha</td>
-				<h:outputText value="Explode" />  
 				<td><p:calendar value="#{personaBean.fecha}"  effect="explode" locale="es" /> </td>
+			</tr>
+			<tr>
+				<td>Actualizar Persona con id: (dejar en blanco si se desea crear una persona nueva)</td>
+				<td><h:inputText value="#{personaBean.intId}" /></td>
 			</tr>
 		</table>
 
@@ -44,6 +47,9 @@
 		</p>
 		<p>
 			<h:commandButton value="Guardar" action="#{personaBean.save}" />
+		</p>
+		<p>
+			<h:commandButton value="Actualizar" action="#{personaBean.update}" />
 		</p>
 
 	</h:form>

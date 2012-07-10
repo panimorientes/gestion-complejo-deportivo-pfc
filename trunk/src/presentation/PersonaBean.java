@@ -3,11 +3,14 @@ package presentation;
 import java.util.Date;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 import data.dao.impl.PersonaDAOImpl;
-import domain.Persona;
+import domain.impl.PersonaImpl;
+import domain.interfaces.Persona;
 
 @ManagedBean(name="personaBean")
+@SessionScoped
 public class PersonaBean {
 	private int intId;
 	private String strNombres;
@@ -64,7 +67,7 @@ public class PersonaBean {
 	
 	
 	/**
-	 * Guarda un objeto PersonaBean en la Base de Datos
+	 * Guarda un objeto Persona en la Base de Datos
 	 * 
 	 * @param (no tiene parametros)
 	 * @return (no devuelve nada)
@@ -73,7 +76,7 @@ public class PersonaBean {
 	public void save(){	
 		
 		//CREO UN OBJETO PERSONA Y LO INSERTO EN LA BD
-    	Persona p1=new Persona();
+    	Persona p1=new PersonaImpl();
     	p1.setStrNombres(this.strNombres);
     	p1.setStrApellidos(this.strApellidos);
     	p1.setIntEdad(this.intEdad);;
@@ -81,8 +84,29 @@ public class PersonaBean {
     	p1.setStrEstado("1");
     	
     	PersonaDAOImpl personaDAOImpl = new PersonaDAOImpl();
-    	personaDAOImpl.saveObject(p1);
+    	personaDAOImpl.insertar(p1);
 
+	}
+	
+	
+	/**
+	 * Actualiza un objeto Persona en la Base de Datos
+	 * 
+	 * @param (no tiene parametros)
+	 * @return (no devuelve nada)
+	 * @throws (no eleva ninguna excepcion de momento)
+	 */
+	public void update(){
+    	Persona p1=new PersonaImpl();
+    	p1.setIntId(this.intId);
+    	p1.setStrNombres(this.strNombres);
+    	p1.setStrApellidos(this.strApellidos);
+    	p1.setIntEdad(this.intEdad);;
+    	p1.setIntIdEmpresa(1);
+    	p1.setStrEstado("1");
+		
+    	PersonaDAOImpl personaDAOImpl = new PersonaDAOImpl();
+    	personaDAOImpl.actualizar(p1);
 	}
 
 

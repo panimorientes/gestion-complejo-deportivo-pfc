@@ -5,7 +5,7 @@ import org.apache.commons.logging.LogFactory;
 import org.hibernate.HibernateException;
 
 import data.dao.interfaces.PersonaDAO;
-import domain.Persona;
+import domain.interfaces.Persona;
 
 public class PersonaDAOImpl extends DAOImpl implements PersonaDAO{
 	
@@ -14,7 +14,7 @@ public class PersonaDAOImpl extends DAOImpl implements PersonaDAO{
 	/**
 	 * Guarda una Persona en la Base de Datos
 	 * 
-	 * @param Persona
+	 * @param p Representa el objeto Persona que se desea insertar en la Base de Datos
 	 * @return void
 	 * @throws DataBaseException
 	 */
@@ -26,5 +26,24 @@ public class PersonaDAOImpl extends DAOImpl implements PersonaDAO{
 			throw new HibernateException(e.getMessage(), e);
 		}
 	}
+	
+	
+	/**
+	 * Actualiza una Persona en la Base de Datos
+	 * 
+	 * @param p Representa el objeto Persona que se desea actualizar en la Base de Datos
+	 * @return void
+	 * @throws DataBaseException
+	 */
+	public void actualizar(Persona p){
+		try{
+			updateObject(p);
+		}catch(Exception e){
+			LOG.error("PersonaDAOImpl - actualizar ERROR:", e);
+			throw new HibernateException(e.getMessage(), e);
+		}
+	}
+	
+	
 	
 }
