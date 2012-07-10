@@ -1,6 +1,6 @@
 package data.dao.interfaces;
 
-import domain.Persona;
+import domain.interfaces.Persona;
 
 public interface PersonaDAO {
 
