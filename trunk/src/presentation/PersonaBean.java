@@ -3,9 +3,11 @@ package presentation;
 import java.util.Date;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
 import data.dao.impl.PersonaDAOImpl;
+import data.dao.interfaces.PersonaDAO;
 import domain.impl.PersonaImpl;
 import domain.interfaces.Persona;
 
@@ -20,7 +22,15 @@ public class PersonaBean {
 	private String strEstado;
 	private Date fecha;
 	
+	@ManagedProperty(value="#{personaDAOId}")
+	PersonaDAO personaDAO;
 	
+	public PersonaDAO getPersonaDAO() {
+		return personaDAO;
+	}
+	public void setPersonaDAO(PersonaDAO personaDAO) {
+		this.personaDAO = personaDAO;
+	}
 	
 	public int getIntId() {
 		return intId;
@@ -83,12 +93,12 @@ public class PersonaBean {
     	p1.setIntIdEmpresa(1);
     	p1.setStrEstado("1");
     	
-    	PersonaDAOImpl personaDAOImpl = new PersonaDAOImpl();
-    	personaDAOImpl.insertar(p1);
+    	personaDAO.insertar(p1);
 
 	}
 	
 	
+
 	/**
 	 * Actualiza un objeto Persona en la Base de Datos
 	 * 
@@ -105,14 +115,12 @@ public class PersonaBean {
     	p1.setIntIdEmpresa(1);
     	p1.setStrEstado("1");
 		
-    	PersonaDAOImpl personaDAOImpl = new PersonaDAOImpl();
-    	personaDAOImpl.actualizar(p1);
+    	personaDAO.actualizar(p1);
 	}
 
 
 	public void obtain(){
-		PersonaDAOImpl personaDAOImpl = new PersonaDAOImpl();
-    	Persona p = personaDAOImpl.obtener(this.intId);
+    	Persona p = personaDAO.obtener(this.intId);
     	this.strNombres = p.getStrNombres();
     	this.strApellidos = p.getStrApellidos();
     	this.intEdad = p.getIntEdad();
