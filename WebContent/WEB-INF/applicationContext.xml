@@ -8,4 +8,18 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 		<property name="strNombres" value="DI desde Spring" />
 	</bean>
  
+ 
+ <!-- 
+ <tx:annotation-driven transaction-manager="hibernateTransaction"/>
+	
+	<bean class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean" id="sessionFactory">
+		<property name="configLocation" value="WEB-INF/hibernate.cfg.xml"/>
+	</bean>
+	
+	<bean class="org.springframework.orm.hibernate3.HibernateTransactionManager" id="hibernateTransaction">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+  -->
+  
+  
 </beans>
