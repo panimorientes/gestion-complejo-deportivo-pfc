@@ -4,22 +4,8 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
  
-	<bean id="personaBean" class="presentation.PersonaBean">
-		<property name="strNombres" value="DI desde Spring" />
+	<bean id="personaDAOId" class="data.dao.impl.PersonaDAOImpl">
 	</bean>
  
- 
- <!-- 
- <tx:annotation-driven transaction-manager="hibernateTransaction"/>
-	
-	<bean class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean" id="sessionFactory">
-		<property name="configLocation" value="WEB-INF/hibernate.cfg.xml"/>
-	</bean>
-	
-	<bean class="org.springframework.orm.hibernate3.HibernateTransactionManager" id="hibernateTransaction">
-		<property name="sessionFactory" ref="sessionFactory"></property>
-	</bean>
-  -->
-  
   
 </beans>
