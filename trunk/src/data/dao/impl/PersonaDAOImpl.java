@@ -6,6 +6,7 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import data.HibernateUtil;
 import data.dao.interfaces.PersonaDAO;
@@ -26,6 +27,7 @@ public class PersonaDAOImpl extends DAOImpl implements PersonaDAO{
 	 */
 	public void insertar(Persona p){
 		try{
+			//getHibernateTemplate().save(p);
 			saveObject(p);
 		}catch(Exception e){
 			LOG.error("PersonaDAOImpl - insertar ERROR:", e);
