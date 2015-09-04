@@ -1,0 +1,1 @@
+Aplicación web para la gestión de un complejo deportivo con jsf e hibernate
